@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-
-pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -18,33 +17,28 @@ pageEncoding="UTF-8"%>
 
 <body>
 
-<c:if test="${!empty msg}">
+	<c:if test="${!empty msg}">
+		<script>
+			alert("${msg}");
+			<c:remove var="msg"/>
+		</script>
+	</c:if>
 
-<script>
+	<h3>회원 가입</h3>
 
-alert("${msg}");
+	<form action="signUp" method="post">
 
-<c:remove var="msg"/>
+		<label> ID : </label> <input type="text" name="memberId"> <br>
 
-</script>
+		<label>PWD : </label> <input type="password" name="memberPwd">
+		<br> <label>이름 : </label> <input type="text" name="memberName">
+		<br>
 
-</c:if>
+		<button>회원가입</button>
 
-<h3>회원 가입</h3>
+		<button type="reset">리셋</button>
 
-<form action="signUp" method="post">
-
-<label> ID : </label> <input type="text" name="memberId"> <br>
-
-<label>PWD : </label> <input type="password" name="memberPwd"> <br>
-
-<label>이름 : </label> <input type="text" name="memberName"> <br>
-
-<button>회원가입</button>
-
-<button type="reset">리셋</button>
-
-</form>
+	</form>
 
 </body>
 

@@ -2,6 +2,9 @@ package com.mycompany.jointest.member.vo;
 
 import java.sql.Date;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Member {
 	private String memberid;
 	private String memberpwd;
